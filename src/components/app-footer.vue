@@ -62,17 +62,26 @@
   &__logo {
     width: 261.6px;
     grid-area: logo;
+    @media screen and (max-width: 769px) {
+      width: 106.78px;
+    }
   }
   &__phone {
     grid-area: phone;
     font-weight: 400;
     font-size: 42px;
     line-height: 55px;
+    @media screen and (max-width: 769px) {
+      padding-top: 50px;
+      font-size: 32px;
+      line-height: 42px;
+    }
   }
   &__social {
     grid-area: social;
     display: flex;
     grid-gap: 20px;
+
     img {
       width: 35px;
     }
@@ -83,14 +92,28 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 24px;
+    @media screen and (max-width: 769px) {
+      padding-top: 15px;
+      font-size: 16px;
+      line-height: 25px;
+    }
   }
   &__menu {
     grid-area: menu;
     align-self: end;
+    @media screen and (max-width: 769px) {
+      padding-top: 45px;
+      padding-bottom: 25px;
+    }
     li {
       font-weight: 300;
       font-size: 22px;
       line-height: 29px;
+      @media screen and (max-width: 769px){
+        margin-bottom: 7px;
+        font-size: 16px;
+        line-height: 21px;
+      }
     }
   }
   &__copyrights {
@@ -118,6 +141,10 @@
           content: '';
         }
       }
+    }
+    @media screen and (max-width: 769px){
+      padding-top: 40px;
+      grid-gap: 7px;
     }
   }
 }

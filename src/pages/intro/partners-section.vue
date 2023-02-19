@@ -40,6 +40,9 @@
 <style scoped lang="scss">
   .partners {
     margin-top: 273px;
+    @media screen and (max-width: 769px) {
+      margin-top: 160px;
+    }
     &__info {
       display: grid;
       grid-template-columns: 585px 1fr;
@@ -51,6 +54,10 @@
         grid-template-rows: 150px;
         text-align: center;
       }
+      @media screen and (max-width: 769px) {
+        grid-gap: 30px;
+      }
+
       h2 {
         margin-bottom: 10px;
       }
@@ -63,8 +70,14 @@
       justify-content: center;
       position: relative;
       height: 286px;
+      @media screen and (max-width: 769px) {
+        height: 80px;
+      }
       img {
         width: 187px;
+        @media screen and (max-width: 769px){
+          width: 80px;
+        }
       }
       &::before, &::after {
         display: block;
@@ -72,6 +85,10 @@
         height: 286px;
         content: '';
         position: absolute;
+        @media screen and (max-width: 769px) {
+          height: 120px;
+          width: 80px;
+        }
       }
       &::before {
         left: 0;

@@ -1,6 +1,6 @@
 <script setup>
-  import AppHeader from "@/components/app-header.vue";
-  import IndexPage from "@/pages/index-page.vue";
+  import AppHeader from "src/components/app-header.vue";
+  import IndexPage from "src/pages/index-page.vue";
   import AppFooter from "src/components/app-footer.vue";
 </script>
 

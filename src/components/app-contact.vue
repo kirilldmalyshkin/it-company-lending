@@ -38,7 +38,9 @@ import AppAccordeon from "src/components/app-accordeon.vue";
   }
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr;
-    grid-gap: 32px;
+    //grid-gap: 32px;
+    padding: 80px 10px;
+    grid-gap: 50px;
   }
 
   &__text {
@@ -46,6 +48,9 @@ import AppAccordeon from "src/components/app-accordeon.vue";
     h2 {
       text-align: inherit;
       margin-bottom: 10px;
+    }
+    @media screen and (max-width: 769px) {
+      text-align: center;
     }
   }
 

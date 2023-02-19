@@ -34,9 +34,19 @@ const cases = [
   .cases {
     margin-top: 70px;
     margin-bottom: 112px;
+    @media screen and (max-width: 769px){
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
     &__text {
       max-width: 1200px;
       margin-bottom: 80px;
+      @media screen and (max-width: 769px) {
+        margin-bottom: 30px;
+        h2 {
+          margin-bottom: 10px;
+        }
+      }
     }
     &__cards {
       display: grid;
@@ -48,7 +58,8 @@ const cases = [
         grid-template-columns: repeat(2, 472px)
       }
       @media screen and (max-width: 1040px) {
-        grid-template-columns: repeat(1, 1fr)
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 16px;
       }
 
     }

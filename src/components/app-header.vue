@@ -4,7 +4,10 @@
       <img src="/images/incode-logo.svg" alt="header-logo">
     </div>
     <nav class="header__nav nav">
-      <ul class="nav__list">
+      <div class="header__burger" @click="burger = !burger">
+        <span />
+      </div>
+      <ul class="nav__list" :class="{'open': burger}">
         <li class="nav__list-item" v-for="link in links" :key="link.id">
           <a href="" class="nav__link btn">{{ link.label }}</a>
         </li>
@@ -15,12 +18,16 @@
 
 <script setup>
 
+  import {ref} from "vue";
+
   const links = [
     { label: 'компания', id: 'company' },
     { label: 'услуги', id: 'services' },
     { label: 'кейсы', id: 'cases' },
     { label: 'связаться', id: 'contacts' }
   ]
+
+  const burger = ref(false)
 
 </script>
 
@@ -47,6 +54,40 @@
         align-items: center;
       }
     }
+
+    &__burger {
+      display: none;
+      @media screen and (max-width: 1100px) {
+        width: 48px;
+        height: 48px;
+        margin-right: 0;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          display: block;
+          position: relative;
+          height: 2px;
+          width: 22px;
+          background: #FFFFFF;
+          &::before, &::after {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #FFFFFF;
+            content: '';
+          }
+          &::before {
+            top: -7px;
+          }
+          &::after {
+            bottom: -7px;
+          }
+        }
+      }
+    }
   }
 
   .nav {
@@ -64,10 +105,15 @@
         flex-direction: column;
         align-items: center;
         background: #18181B;
-        //background: red;
         border-radius: 0px 0px 18px 18px;
-        padding-bottom: 78px;
         padding-top: 7px;
+        height: 0;
+        overflow: hidden;
+        &.open {
+          height: auto;
+          padding-bottom: 78px;
+          transition: height .5s linear;
+        }
       }
     }
     &__link {

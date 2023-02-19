@@ -46,6 +46,11 @@
       align-items: center;
       grid-gap: 221px;
       margin-bottom: 144px;
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px;
+        text-align: center;
+      }
       h2 {
         margin-bottom: 10px;
       }

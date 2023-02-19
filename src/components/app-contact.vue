@@ -36,6 +36,10 @@ import AppAccordeon from "src/components/app-accordeon.vue";
   @media screen and (max-width: 1320px) {
     grid-template-columns: 50% 1fr;
   }
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+  }
 
   &__text {
     text-align: left;

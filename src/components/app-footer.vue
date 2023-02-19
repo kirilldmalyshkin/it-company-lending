@@ -54,6 +54,10 @@
     grid-column-gap: 200px;
     grid-template-areas: 'logo phone social' '. address menu ' 'copy copy copy';
     grid-template-columns: 261.6px 289px 132px;
+    @media screen and (max-width: 1200px){
+      grid-template-columns: 1fr;
+      grid-template-areas: 'logo' 'phone' 'address' 'menu' 'social' 'copy';
+    }
   }
   &__logo {
     width: 261.6px;
@@ -105,6 +109,16 @@
     }
 
     grid-area: copy;
+
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      a, span {
+        &::after {
+          content: '';
+        }
+      }
+    }
   }
 }
 </style>

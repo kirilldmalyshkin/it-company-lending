@@ -48,8 +48,9 @@ const cases = [
         grid-template-columns: repeat(2, 472px)
       }
       @media screen and (max-width: 1040px) {
-        grid-template-columns: repeat(1, 472px)
+        grid-template-columns: repeat(1, 1fr)
       }
+
     }
   }
 </style>

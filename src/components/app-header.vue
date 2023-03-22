@@ -1,7 +1,7 @@
 <template>
   <header class="header container">
     <div class="header__logo">
-      <img src="/images/incode-logo.svg" alt="header-logo">
+      <img src="/images/geeklab-log.svg" alt="header-logo">
     </div>
     <nav class="header__nav nav">
       <div class="header__burger" @click="burger = !burger">
@@ -18,13 +18,13 @@
 
 <script setup>
 
-  import {ref} from "vue";
+  import { ref } from "vue";
 
   const links = [
-    { label: 'компания', id: 'company' },
+    { label: 'о нас', id: 'company' },
     { label: 'услуги', id: 'services' },
     { label: 'кейсы', id: 'cases' },
-    { label: 'связаться', id: 'contacts' }
+    { label: 'заказать проект', id: 'contacts' }
   ]
 
   const burger = ref(false)
@@ -33,8 +33,8 @@
 
 <style scoped lang="scss">
   .header {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 35px;
+    padding-bottom: 36px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -105,7 +105,7 @@
         flex-direction: column;
         align-items: center;
         background: #18181B;
-        border-radius: 0px 0px 18px 18px;
+        border-radius: 0 0 18px 18px;
         padding-top: 7px;
         height: 0;
         overflow: hidden;
@@ -127,4 +127,14 @@
     }
   }
 
+  .nav__list {
+    li:last-of-type .nav__link {
+      white-space: nowrap;
+      width: auto;
+      padding: 0 28px 0 28px;
+      &::before, &::after {
+        border-color: #A08EFF;
+      }
+    }
+  }
 </style>

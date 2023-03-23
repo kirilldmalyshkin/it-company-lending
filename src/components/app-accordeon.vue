@@ -14,11 +14,11 @@ defineProps({
 
 <template>
   <div class="accordion">
-    <div class="accordion__visible" :class="{'accordion__visible_active': isOpen}">
+    <div class="accordion__visible"  @click="isOpen = !isOpen" :class="{'accordion__visible_active': isOpen}">
       <span>
         {{ label }}
       </span>
-      <button @click="isOpen = !isOpen">
+      <button>
         <img v-if="!isOpen" src="/images/open.svg" alt="">
         <img v-else src="/images/close.svg" alt="">
       </button>
@@ -38,6 +38,7 @@ defineProps({
   height: fit-content;
   min-height: 60px;
   &__visible {
+    cursor: pointer;
     position: absolute;
     background: #18181B;
     padding: 16px 32px;

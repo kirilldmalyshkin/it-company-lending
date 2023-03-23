@@ -28,6 +28,7 @@
 
 <style scoped lang="scss">
   .case-card {
+    cursor: pointer;
     padding: 32px 42px 36px 40px;
     border-radius: 18px;
     @media screen and (max-width: 1100px) {

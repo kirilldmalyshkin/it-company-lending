@@ -101,6 +101,11 @@
     padding-top: 16px;
     text-align: center;
   }
+
+  &__background {
+    user-select: none;
+    z-index: -1;
+  }
 }
 
 </style>

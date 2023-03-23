@@ -7,6 +7,10 @@ body {
   color: $color-white;
 }
 
+img {
+  pointer-events: none;
+}
+
 h1 {
   font-style: normal;
   font-weight: 400;
@@ -24,8 +28,8 @@ h1 {
 
 h2 {
   font-weight: 400;
-  font-size: 62px;
-  line-height: 82px;
+  font-size: 60px;
+  line-height: 79px;
   letter-spacing: -0.03em;
   @media screen and (max-width: 769px) {
     font-size: 24px;

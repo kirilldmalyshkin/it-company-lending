@@ -38,6 +38,7 @@ defineProps({
   height: fit-content;
   min-height: 60px;
   &__visible {
+    user-select: none;
     cursor: pointer;
     position: absolute;
     background: #18181B;
@@ -53,6 +54,7 @@ defineProps({
     z-index: 10;
     width: 100%;
     &_active {
+      user-select: none;
       background: #D0D0FA;
       color: #18181B;
     }

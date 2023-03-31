@@ -1,13 +1,13 @@
 <template>
   <section class="partners">
     <div class="partners__info container">
-      <img src="/images/temp/Background-pattern-animation-3.png" alt="">
+      <img src="/images/temp/our-clients.svg" alt="our clients">
       <div>
         <h2>
-          Наши партнеры
+          Наши клиенты
         </h2>
         <p>
-          Короткое описание основной мысли новостного блока в данном фрейме, без указания деталей
+          Среди наших клиентов крупнейшие <br />российские и международные компании
         </p>
       </div>
     </div>
@@ -47,7 +47,7 @@
       display: grid;
       grid-template-columns: 585px 1fr;
       align-items: center;
-      grid-gap: 221px;
+      grid-gap: 200px;
       margin-bottom: 144px;
       @media screen and (max-width: 1200px) {
         grid-template-columns: 1fr;

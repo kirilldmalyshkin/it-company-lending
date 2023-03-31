@@ -5,20 +5,23 @@
   <footer class="footer">
     <div class="container">
     <div class="footer__logo">
-      <img src="/images/incode-logo.svg" alt="">
-    </div>
-    <div class="footer__phone">
-      +78003028848
+      <img src="/images/geeklab-log.svg" alt="geeklab logo">
     </div>
     <div class="footer__social">
       <a href=""><img src="/images/Viber.svg" alt=""></a>
       <a href=""><img src="/images/Telegram.svg" alt=""></a>
     </div>
-    <div class="footer__address">
-      Санкт-Петербург, Россия<br>
-      Малая Морская улица, 18<br>
-      Санкт-Петербург, 190000
-    </div>
+      <div class="footer__address">
+          Москва, Россия<br>
+          Проспект Мира, 202, ст.3<br>
+      </div>
+      <div class="footer__address footer__address-2">
+          Санкт-Петербург, Россия<br>
+          Малая Морская улица, 18<br>
+      </div>
+<!--    <div class="footer__address">-->
+
+<!--    </div>-->
     <div class="footer__menu">
       <nav>
         <ul>
@@ -52,11 +55,11 @@
     padding-bottom: 80px;
     display: grid;
     grid-column-gap: 200px;
-    grid-template-areas: 'logo phone social' '. address menu ' 'copy copy copy';
+    grid-template-areas: 'logo address social' '. address2 menu ' 'copy copy copy';
     grid-template-columns: 261.6px 289px 132px;
     @media screen and (max-width: 1200px){
       grid-template-columns: 1fr;
-      grid-template-areas: 'logo' 'phone' 'address' 'menu' 'social' 'copy';
+      grid-template-areas: 'logo' 'address' 'menu' 'social' 'copy';
     }
   }
   &__logo {
@@ -88,16 +91,22 @@
   }
   &__address {
     grid-area: address;
-    padding-top: 32px;
+    //padding-top: 32px;
     font-weight: 300;
     font-size: 18px;
     line-height: 24px;
+
     @media screen and (max-width: 769px) {
       padding-top: 15px;
       font-size: 16px;
       line-height: 25px;
     }
   }
+
+  &__address-2 {
+    grid-area: address2;
+  }
+
   &__menu {
     grid-area: menu;
     align-self: end;

@@ -20,7 +20,9 @@ import AppAccordeon from "src/components/app-accordeon.vue";
       </p>
     </div>
     <div class="contact__accordions">
-      <app-accordeon label="Имя" ></app-accordeon>
+      <app-accordeon label="Имя" >
+        <input type="text" class="contact__input" autofocus>
+      </app-accordeon>
       <app-accordeon label="Телефон или почта" ></app-accordeon>
       <app-accordeon label="Задача" >#тэги</app-accordeon>
     </div>
@@ -30,6 +32,11 @@ import AppAccordeon from "src/components/app-accordeon.vue";
 
 <style scoped lang="scss">
 @import "/src/assets/style/vars";
+
+input:focus {
+  outline: none;
+  caret-color: blue;
+}
 
 .contact__body p:first-of-type {
   margin-bottom: 1rem;

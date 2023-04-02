@@ -1,5 +1,5 @@
 <script setup>
-import CaseCardComponent from "src/pages/intro/case-card-component.vue";
+import CaseCardComponent from "@/pages/intro/components/case-card-component.vue";
 
 const cases = [
   { text: 'Web-разработка', image: '/images/index/cases/Icon1.svg', color: '#C0EAFF'},

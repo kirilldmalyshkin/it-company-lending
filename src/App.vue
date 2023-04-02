@@ -1,12 +1,12 @@
 <script setup>
   import AppHeader from "src/components/app-header.vue";
-  import IndexPage from "src/pages/index-page.vue";
+  import IndexPage from "@/pages/intro/index-page.vue";
   import AppFooter from "src/components/app-footer.vue";
 </script>
 
 <template>
   <app-header />
-  <index-page />
+  <router-view></router-view>
   <app-footer />
 
 </template>

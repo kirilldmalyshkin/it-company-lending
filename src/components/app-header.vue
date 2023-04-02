@@ -1,7 +1,9 @@
 <template>
   <header class="header container">
     <div class="header__logo">
+      <router-link to="/">
       <img src="/images/geeklab-log.svg" alt="header-logo">
+      </router-link>
     </div>
     <nav class="header__nav nav">
       <div class="header__burger" @click="burger = !burger">
@@ -9,7 +11,7 @@
       </div>
       <ul class="nav__list" :class="{'open': burger}">
         <li class="nav__list-item" v-for="link in links" :key="link.id">
-          <a href="" class="nav__link btn">{{ link.label }}</a>
+          <router-link :to="link.id" class="nav__link btn">{{ link.label }}</router-link>
         </li>
       </ul>
     </nav>
@@ -21,10 +23,10 @@
   import { ref } from "vue";
 
   const links = [
-    { label: 'о нас', id: 'company' },
-    { label: 'услуги', id: 'services' },
-    { label: 'кейсы', id: 'cases' },
-    { label: 'заказать проект', id: 'contacts' }
+    { label: 'о нас', id: '/' },
+    { label: 'услуги', id: '/' },
+    { label: 'кейсы', id: '/projects' },
+    { label: 'заказать проект', id: '/' }
   ]
 
   const burger = ref(false)

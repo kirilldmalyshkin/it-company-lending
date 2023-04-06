@@ -37,11 +37,11 @@
     height: 100%;
     z-index: -1;
     background-image: url('../../../../public/images/temp/background-pattern-animation.png');
+    background-repeat: no-repeat;
     //background-image: url('/images/temp/background-pattern-animation.png');
     //background-size: cover;
     background-position: center;
     @media screen and (max-width: 769px) {
-      background-repeat: no-repeat;
       background-size: 200% auto;
       top: -60px;
       //left: 25px;

@@ -59,7 +59,9 @@
     grid-template-columns: 261.6px 289px 132px;
     @media screen and (max-width: 1200px){
       grid-template-columns: 1fr;
-      grid-template-areas: 'logo' 'address' 'menu' 'social' 'copy';
+      grid-template-areas: 'logo' 'address' 'address2' 'menu' 'social' 'copy';
+      margin-top: 0;
+      padding-top: 40px;
     }
   }
   &__logo {
@@ -97,7 +99,7 @@
     line-height: 24px;
 
     @media screen and (max-width: 769px) {
-      padding-top: 15px;
+      padding-top: 32px;
       font-size: 16px;
       line-height: 25px;
     }
@@ -155,6 +157,9 @@
       padding-top: 40px;
       grid-gap: 7px;
     }
+  }
+  @media screen and (max-width: 769px){
+    //padding-top: 40px;
   }
 }
 </style>

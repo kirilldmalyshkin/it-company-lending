@@ -1,111 +1,98 @@
-<script setup>
-// import PartnersSection from "./partners-section.vue";
-</script>
-
 <template>
   <div class="intro-hero">
-      <section class="intro">
-        <div class="intro__container">
-          <h1 class="intro__slogan">
-            Цифровые сервисы <br />
-            для бизнеса
-          </h1>
-          <p class="intro__paragraph">
-            Мы разрабатываем цифровые продукты, которые позволяют компаниям работать эффективнее, делают работу миллионов <br />людей продуктивнее, а жизнь — технологичнее
-          </p>
-        </div>
-      </section>
-      <div class="intro-bg-container">
-        <img class="intro__background" src="/images/temp/background-pattern-animation.png" alt="geeklab background">
+    <div class="intro-hero__bg"></div>
+    <section class="intro">
+      <div class="intro__container">
+        <h1 class="intro__slogan">Цифровые сервисы<br>для бизнеса</h1>
+        <p class="intro__paragraph">Мы разрабатываем цифровые продукты, которые позволяют компаниям работать эффективнее, делают работу миллионов людей продуктивнее, а жизнь — технологичнее</p>
       </div>
       <div class="intro-hero__btn">
-        <a href="" class="btn">
-          узнать больше
-        </a>
+        <a href="" class="btn">Узнать больше</a>
       </div>
-    </div>
+    </section>
+  </div>
 </template>
 
-
 <style scoped lang="scss">
-
-.btn {
-  white-space: nowrap;
-  width: fit-content;
-  margin-right: 52px;
-  margin-top: 38px;
-}
-
 .intro-hero {
-  display: grid;
-  grid-template-rows: fit-content(24rem);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 1120px;
   border-top: 1px solid #28282A;
   padding-top: 3%;
+  @media screen and (max-width: 769px) {
+    height: auto;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../../../../public/images/temp/background-pattern-animation.png');
+    //background-image: url('/images/temp/background-pattern-animation.png');
+    //background-size: cover;
+    background-position: center;
+    @media screen and (max-width: 769px) {
+      background-repeat: no-repeat;
+      background-size: 200% auto;
+      top: -60px;
+      //left: 25px;
+    }
+
+  }
 
   &__btn {
-    margin: 0 auto;
-    grid-column: 1;
-    grid-row: 1;
-    grid-row-start: 2;
-    grid-row-end: auto;
+    align-self: flex-end;
+    margin-top: auto;
+    position: relative;
+    bottom: -328px;
   }
-}
-
-.intro-bg-container {
-  grid-column: 1;
-  grid-row: 1;
-  grid-row-start: 1;
-  grid-row-end: auto;
-  top: 0;
-  transition: all 1s ease-in-out;
-  width: 100%;
 }
 
 .intro {
-  align-items: center;
-  color: var(--text-secondary);
-  display: flex;
-  flex-direction: row;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0 auto;
   max-width: 54rem;
-  transition: all .3s ease-in-out;
-  width: auto;
-  @media screen and (max-width: 769px) {
-    img {
-      min-height: 429.29px;
-      object-fit: cover;
-    }
-  }
+  width: 100%;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  text-align: center;
 
   &__container {
     padding-right: 80px;
-    //position: absolute;
-    //top: 56%;
-    //left: 50%;
-    //transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 769px) {
+      padding-right: 0;
+    }
   }
 
   &__slogan {
-    margin-top: 5rem;
-    max-width: 1466px;
-    width: 100%;
-    @media screen and (max-width: 769px) {
-      max-width: 350px;
-    }
+    margin-top: 32%;
+    margin-bottom: 2rem;
   }
 
   &__paragraph {
     padding-top: 16px;
-    text-align: center;
-  }
-
-  &__background {
-    user-select: none;
-    z-index: -1;
   }
 }
 
+.btn {
+  display: inline-block;
+  white-space: nowrap;
+  width: fit-content;
+  margin-right: 64px;
+  margin-top: 38px;
+  transition: all .3s ease-in-out;
+
+  @media screen and (max-width: 769px) {
+    margin: 40px auto 114px;
+    width: 175px;
+  }
+}
 </style>

@@ -10,7 +10,7 @@ export default {
 
 <template>
   <div class="contact">
-    <div class="contact__body">
+    <div class="contact__body desktop">
       <h2>
         Обсудить идею <br /> или проект
       </h2>
@@ -25,15 +25,43 @@ export default {
         <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>
       </p>
     </div>
+    <h2 class="mobile contact__header">
+      Обсудить идею <br /> или проект
+    </h2>
     <div class="contact__inputs">
       <input type="text" class="contact__input" autofocus placeholder="Ваше имя">
-      <input type="text" class="contact__input phone-mask" placeholder="+7 (___) ___-__-__">
+      <input type="text" class="contact__input phone-mask" placeholder="+7 (___) ___ - __ __">
       <input type="text" class="contact__input" placeholder="Задача">
+    </div>
+    <div class="contact__body mobile">
+      <p>
+        Нажимая кнопку отправить, вы соглашаетесь <br />
+        <a href="#" class="contact__href">с Политикой обработки данных</a>
+      </p>
+      <p>
+        <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>
+      </p>
+      <a href="#" class="btn contact__btn">
+        отправить
+      </a>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+.mobile {
+  display: none;
+
+  @media screen and (max-width: 769px) {
+    display: block;
+  }
+}
+.desktop {
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
+}
+
 .contact {
   display: grid;
   max-width: 1574px;
@@ -45,6 +73,19 @@ export default {
   padding: 71px 70px 64px 84px;
   grid-template-columns: 600px 1fr;
   grid-gap: 120px;
+
+  @media screen and (max-width: 769px) {
+    border-radius: 0;
+    padding: 50px 10px 55px;
+    margin-top: 0;
+    &__header {
+      justify-self: center;
+      text-align: center;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
 
   @media screen and (max-width: 1320px) {
     grid-template-columns: 50% 1fr;
@@ -64,6 +105,10 @@ export default {
     }
     @media screen and (max-width: 769px) {
       text-align: center;
+      color: #BDBDBD;
+      font-weight: 200;
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 
@@ -78,6 +123,10 @@ export default {
 
     &::before, &::after {
       border-color: $color-light-blue;
+    }
+
+    @media screen and (max-width: 769px) {
+      margin: 40px auto 0;
     }
   }
 
@@ -96,11 +145,15 @@ export default {
     border: 1px solid #A08EFF;
     border-radius: 45px;
     height: 48px;
-    padding: 0 16px;
+    padding: 10px 42px;
     font-size: 16px;
     line-height: 22px;
     color: #fff;
     background-color: #18181B;
+
+    @media screen and (max-width: 769px) {
+      padding: 16px 32px;
+    }
   }
 
   p {

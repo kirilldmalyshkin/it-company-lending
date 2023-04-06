@@ -48,8 +48,7 @@ const cases = [
     margin: 0 auto;
     //background-color: #28282A;
     @media screen and (max-width: 769px){
-      //margin-top: 30px;
-      //margin-bottom: 0;
+      padding: 100px 20px 80px;
     }
 
     &::before {
@@ -77,6 +76,12 @@ const cases = [
       z-index: -1;
     }
 
+    @media screen and (max-width: 769px) {
+      &::after, &::before {
+        display: none;
+      }
+    }
+
     &__text {
       max-width: 1200px;
       margin-bottom: 80px;
@@ -93,6 +98,9 @@ const cases = [
       grid-row-gap: 27px;
       grid-template-columns: repeat(3, 472px);
       justify-content: center;
+      @media screen and (max-width: 769px) {
+        padding: 0;
+      }
       @media screen and (max-width: 1490px) {
         grid-template-columns: repeat(2, 472px)
       }

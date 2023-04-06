@@ -1,17 +1,11 @@
-<script setup>
-import AppAccordeon from "src/components/app-accordeon.vue";
+<script>
+import Inputmask from 'inputmask';
 
-const cases = [
-  { text: 'Web-разработка', image: '/images/index/cases/Icon1.svg'},
-  { text: 'Mobile-разработка', image: '/images/index/cases/Icon2.svg'},
-  { text: 'Высоконагруженные системы', image: '/images/index/cases/Icon3.svg'},
-  { text: 'Брендинг', image: '/images/index/cases/Icon4.svg'},
-  { text: 'Исследования', image: '/images/index/cases/Icon2.svg'},
-  { text: 'Digital-стратегия', image: '/images/index/cases/Icon2.svg'},
-  { text: 'Product management', image: '/images/index/cases/Icon5.svg'},
-  { text: 'IT-Аудит', image: '/images/index/cases/Icon6.svg'},
-  { text: 'IT-Консалтинг', image: '/images/index/cases/Icon7.svg'}
-]
+export default {
+  mounted() {
+    Inputmask("+7 (999) 999-99-99").mask(".phone-mask");
+  }
+}
 </script>
 
 <template>
@@ -31,33 +25,15 @@ const cases = [
         <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>
       </p>
     </div>
-    <div class="contact__accordions">
-      <app-accordeon label="Имя" >
-        <input type="text" class="contact__input" autofocus>
-      </app-accordeon>
-      <app-accordeon label="Телефон или почта" >
-        <input type="text" class="contact__input" autofocus>
-      </app-accordeon>
-      <app-accordeon label="Задача">
-        <p v-for="caseCard in cases" :key="caseCard.text" v-bind="caseCard">{{caseCard.text}}</p>
-      </app-accordeon>
+    <div class="contact__inputs">
+      <input type="text" class="contact__input" autofocus placeholder="Ваше имя">
+      <input type="text" class="contact__input phone-mask" placeholder="+7 (___) ___-__-__">
+      <input type="text" class="contact__input" placeholder="Задача">
     </div>
-
   </div>
 </template>
 
 <style scoped lang="scss">
-@import "/src/assets/style/vars";
-
-input:focus {
-  outline: none;
-  caret-color: blue;
-}
-
-.contact__body p:first-of-type {
-  margin-bottom: 1rem;
-}
-
 .contact {
   display: grid;
   max-width: 1574px;
@@ -69,6 +45,7 @@ input:focus {
   padding: 71px 70px 64px 84px;
   grid-template-columns: 600px 1fr;
   grid-gap: 120px;
+
   @media screen and (max-width: 1320px) {
     grid-template-columns: 50% 1fr;
   }
@@ -88,10 +65,6 @@ input:focus {
     @media screen and (max-width: 769px) {
       text-align: center;
     }
-
-    //p:first-child {
-    //  margin-bottom: 16px;
-    //}
   }
 
   &__btn {
@@ -112,10 +85,22 @@ input:focus {
     text-decoration-line: underline;
   }
 
-  &__accordions {
-    display: flex;
-    flex-direction: column;
+  &__inputs {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 16px;
+    margin-top: 24px;
+  }
+
+  &__input {
+    border: 1px solid #A08EFF;
+    border-radius: 45px;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #18181B;
   }
 
   p {
@@ -125,5 +110,4 @@ input:focus {
     letter-spacing: -0.03em;
   }
 }
-
 </style>

@@ -1,5 +1,17 @@
 <script setup>
 import AppAccordeon from "src/components/app-accordeon.vue";
+
+const cases = [
+  { text: 'Web-разработка', image: '/images/index/cases/Icon1.svg'},
+  { text: 'Mobile-разработка', image: '/images/index/cases/Icon2.svg'},
+  { text: 'Высоконагруженные системы', image: '/images/index/cases/Icon3.svg'},
+  { text: 'Брендинг', image: '/images/index/cases/Icon4.svg'},
+  { text: 'Исследования', image: '/images/index/cases/Icon2.svg'},
+  { text: 'Digital-стратегия', image: '/images/index/cases/Icon2.svg'},
+  { text: 'Product management', image: '/images/index/cases/Icon5.svg'},
+  { text: 'IT-Аудит', image: '/images/index/cases/Icon6.svg'},
+  { text: 'IT-Консалтинг', image: '/images/index/cases/Icon7.svg'}
+]
 </script>
 
 <template>
@@ -23,8 +35,12 @@ import AppAccordeon from "src/components/app-accordeon.vue";
       <app-accordeon label="Имя" >
         <input type="text" class="contact__input" autofocus>
       </app-accordeon>
-      <app-accordeon label="Телефон или почта" ></app-accordeon>
-      <app-accordeon label="Задача" >#тэги</app-accordeon>
+      <app-accordeon label="Телефон или почта" >
+        <input type="text" class="contact__input" autofocus>
+      </app-accordeon>
+      <app-accordeon label="Задача">
+        <p v-for="caseCard in cases" :key="caseCard.text" v-bind="caseCard">{{caseCard.text}}</p>
+      </app-accordeon>
     </div>
 
   </div>

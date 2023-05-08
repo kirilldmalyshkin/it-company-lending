@@ -1,5 +1,5 @@
 <template>
-  <section class="news-preview container">
+  <section class="news-preview container" v-if="false">
     <h2 class="text-center">
       Инсайты
     </h2>

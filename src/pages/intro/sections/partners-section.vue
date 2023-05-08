@@ -3,8 +3,14 @@
     <div class="partners__info container">
       <img src="/images/temp/our-clients.svg" alt="our clients">
       <div>
-        <h2>Наши клиенты</h2>
-        <p>Среди наших клиентов крупнейшие российские и международные компании</p>
+        <h2>
+          Мы ценим работу <br>
+          с клиентами
+        </h2>
+        <p>
+          Среди наших клиентов крупнейшие <br>
+          российские и международные компании
+        </p>
       </div>
     </div>
     <div class="partners__scrollbar">
@@ -72,7 +78,7 @@ const imagesCycle = repeatedImages.concat(repeatedImages.slice(0, repeatedImages
     }
 
     h2 {
-      margin-bottom: 10px;
+      margin-bottom: 26px;
     }
   }
 
@@ -86,15 +92,28 @@ const imagesCycle = repeatedImages.concat(repeatedImages.slice(0, repeatedImages
       gap: 24px;
       position: absolute;
       animation: marquee 200s linear infinite;
+      -webkit-animation-play-state:running;
+
+      &:hover {
+        -webkit-animation-play-state:paused;
+      }
 
       @media screen and (max-width: 769px) {
         gap: 10px;
       }
 
       img {
-        pointer-events: none;
-        user-select: none;
+        //pointer-events: none;
+        //user-select: none;
         width: 187px;
+        background: #27272A;
+        border-radius: 18px;
+        z-index: 20;
+
+        &:hover {
+          background: #404042;
+          cursor: pointer;
+        }
 
         @media screen and (max-width: 769px) {
           width: 80px;

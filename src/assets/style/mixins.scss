@@ -1,0 +1,30 @@
+@mixin letter-spacing {
+  letter-spacing: -0.03em;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-defaults {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+@mixin absolute-defaults {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@mixin absolute-centered {
+  @include absolute-defaults;
+  transform: translate(-50%, -50%);
+}

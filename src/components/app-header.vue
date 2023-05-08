@@ -1,8 +1,10 @@
 <template>
-  <header class="header container">
+  <header class="header__wrapper">
+    <div class="header container">
+
     <div class="header__logo">
       <router-link to="/">
-      <img src="/images/geeklab-log.svg" alt="header-logo">
+        <img src="/images/geeklab-log.svg" alt="header-logo">
       </router-link>
     </div>
     <nav class="header__nav nav">
@@ -13,20 +15,36 @@
         <li class="nav__list-item" v-for="link in links" :key="link.id">
           <router-link :to="link.id" class="nav__link btn">{{ link.label }}</router-link>
         </li>
+        <li v-if="locale" class="nav__locale">
+          EN
+        </li>
+        <li class="nav__list-item">
+          <button class="nav__contact red-btn">
+            Заказать проект
+            <span class="material-symbols-outlined">
+              arrow_forward
+            </span>
+          </button>
+        </li>
       </ul>
+
     </nav>
+    </div>
   </header>
 </template>
 
 <script setup>
 
-  import { ref } from "vue";
+  import { ref, inject } from "vue";
+
+  const { locale } = inject('project-features')
 
   const links = [
-    { label: 'о нас', id: '/' },
-    { label: 'услуги', id: '/' },
-    { label: 'кейсы', id: '/projects' },
-    { label: 'заказать проект', id: '/' }
+    { label: 'О компании', id: '/' },
+    { label: 'Проекты', id: '/projects' },
+    { label: 'Услуги', id: '/services' },
+    { label: 'Инсайты', id: '/incites' },
+    { label: 'Вакансии', id: '/job' }
   ]
 
   const burger = ref(false)
@@ -35,13 +53,26 @@
 
 <style scoped lang="scss">
   .header {
-    padding-top: 35px;
-    padding-bottom: 36px;
-    display: flex;
-    align-items: center;
+    @include flex-center;
+
+    padding-top: 18px;
+    padding-bottom: 19px;
     justify-content: space-between;
     position: relative;
     z-index: 100;
+
+    &__wrapper {
+      @include absolute-defaults;
+      background: $color-black-opacity-40;
+      backdrop-filter: blur(15px);
+      position: fixed;
+      right: 0;
+      z-index: 50;
+
+      @media screen and (max-width: 769px) {
+        background: $color-dark;
+      }
+    }
 
     @media screen and (max-width: 1100px) {
       padding-top: 24px;
@@ -49,6 +80,9 @@
     }
 
     &__logo {
+      height: 43px;
+      padding-left: 25px;
+
       @media screen and (max-width: 769px){
         width: 106.78px;
         height: 40px;
@@ -58,36 +92,35 @@
     }
 
     &__burger {
+      @include flex-center;
+      width: 48px;
+      height: 48px;
+      margin-right: 0;
+      margin-left: auto;
+
+      span {
+        display: block;
+        position: relative;
+        height: 2px;
+        width: 22px;
+        background: $color-white;
+
+        &::before, &::after {
+          @extend %psevdo-element-defaults;
+          height: 2px;
+          width: 100%;
+          background: $color-white;
+        }
+        &::before {
+          top: -7px;
+        }
+        &::after {
+          bottom: -7px;
+        }
+      }
       display: none;
       @media screen and (max-width: 1100px) {
-        width: 48px;
-        height: 48px;
-        margin-right: 0;
-        margin-left: auto;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        span {
-          display: block;
-          position: relative;
-          height: 2px;
-          width: 22px;
-          background: #FFFFFF;
-          &::before, &::after {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: #FFFFFF;
-            content: '';
-          }
-          &::before {
-            top: -7px;
-          }
-          &::after {
-            bottom: -7px;
-          }
-        }
       }
     }
   }
@@ -97,18 +130,20 @@
     &__list {
       display: flex;
       justify-content: flex-end;
-      grid-gap: 36px;
+      grid-gap: 40px;
+      align-items: center;
 
       @media screen and (max-width: 1100px) {
         position: absolute;
         top: 88px;
         left: 0;
+        grid-gap: 20px;
         width: 100vw;
         flex-direction: column;
         align-items: center;
-        background: #18181B;
+        background: $color-dark;
         border-radius: 0 0 18px 18px;
-        padding-top: 7px;
+        padding-top: 0;
         height: 0;
         overflow: hidden;
         &.open {
@@ -119,24 +154,22 @@
       }
     }
     &__link {
-      width: 120px;
-
+      min-width: 114px;
+      &.router-link-exact-active {
+        opacity: 0.6;
+        &::before, &::after {
+          opacity: 0.6;
+        }
+      }
       @media screen and (max-width: 1100px) {
         &::before, &::after {
           display: none;
         }
       }
     }
-  }
 
-  .nav__list {
-    li:last-of-type .nav__link {
-      white-space: nowrap;
-      width: auto;
-      padding: 0 28px 0 28px;
-      &::before, &::after {
-        border-color: #A08EFF;
-      }
+    &__contact {
+      grid-gap: 7px;
     }
   }
 </style>

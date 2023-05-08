@@ -12,18 +12,21 @@ export default {
   <div class="contact">
     <div class="contact__body desktop">
       <h2>
-        Обсудить идею <br /> или проект
+        Обсудить задачу <br /> или проект
       </h2>
-      <a href="#" class="btn contact__btn">
-        отправить
+      <a href="#" class="red-btn contact__btn">
+        Отправить запрос
+        <span class="material-symbols-outlined">
+          arrow_forward
+        </span>
       </a>
       <p>
-        Нажимая кнопку отправить, вы соглашаетесь <br />
+        Нажимая кнопку отправить, вы соглашаетесь
         <a href="#" class="contact__href">с Политикой обработки данных</a>
       </p>
-      <p>
-        <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>
-      </p>
+<!--      <p>-->
+<!--        <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>-->
+<!--      </p>-->
     </div>
     <h2 class="mobile contact__header">
       Обсудить идею <br /> или проект
@@ -35,14 +38,17 @@ export default {
     </div>
     <div class="contact__body mobile">
       <p>
-        Нажимая кнопку отправить, вы соглашаетесь <br />
+        Нажимая кнопку отправить, вы соглашаетесь
         <a href="#" class="contact__href">с Политикой обработки данных</a>
       </p>
       <p>
         <a href="#" class="contact__href">Конфиденциальность</a> и <a href="#" class="contact__href">Условия использования</a>
       </p>
       <a href="#" class="btn contact__btn">
-        отправить
+        Отправить запрос
+        <span class="material-symbols-outlined">
+          arrow_forward
+        </span>
       </a>
     </div>
   </div>
@@ -63,15 +69,14 @@ export default {
 }
 
 .contact {
+  max-width: 1436px;
   display: grid;
-  max-width: 1574px;
-  align-items: center;
   width: 100%;
   margin: 136px auto 0;
   background: #27272A;
   border-radius: 18px;
-  padding: 71px 70px 64px 84px;
-  grid-template-columns: 600px 1fr;
+  padding: 38px 53px 39px;
+  grid-template-columns: 1fr 500px;
   grid-gap: 120px;
 
   @media screen and (max-width: 769px) {
@@ -101,7 +106,7 @@ export default {
     text-align: left;
     h2 {
       text-align: inherit;
-      margin-bottom: 10px;
+      margin-bottom: 34px;
     }
     @media screen and (max-width: 769px) {
       text-align: center;
@@ -113,13 +118,18 @@ export default {
   }
 
   &__btn {
-    color: $color-light-blue;
+    //color: $color-light-blue;
     margin-top: 24px;
     margin-bottom: 28px;
     font-weight: 400;
     font-size: 22px;
     line-height: 29px;
-    width: 175px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    //width: 175px;
 
     &::before, &::after {
       border-color: $color-light-blue;
@@ -137,15 +147,16 @@ export default {
   &__inputs {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 16px;
-    margin-top: 24px;
+    grid-gap: 20px;
+    align-items: start;
+    margin-top: calc(53px - 38px);
   }
 
   &__input {
     border: 1px solid #A08EFF;
-    border-radius: 45px;
-    height: 48px;
-    padding: 10px 42px;
+    border-radius: 18px;
+    height: 54px;
+    padding: 10px 42px 10px 33px;
     font-size: 16px;
     line-height: 22px;
     color: #fff;

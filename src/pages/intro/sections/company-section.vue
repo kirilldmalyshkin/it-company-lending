@@ -1,8 +1,9 @@
 <template>
   <section id="company" class="company">
-    <h2>Решаем сложные бизнес-задачи</h2>
+    <h2>Отраслевая специализация</h2>
     <p>
-      Собственные инвестиционные проекты в различных отраслях позволили нам получить практический опыт и понимание реальных потребностей бизнеса
+      Собственные инвестиционные проекты в различных отраслях позволили нам<br>
+      получить практический опыт и понимание реальных потребностей бизнеса
     </p>
     <div class="button-container">
       <a v-for="button in buttons" :key="button.text" v-bind="button" class="button-round" :href="button.href"/>
@@ -21,30 +22,6 @@ const buttons = [
 </script>
 
 <style scoped lang="scss">
-.button-round {
-  border: 1px solid #FFFFFF;
-  border-radius: 45px;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 29px;
-  padding: 1rem 2rem;
-  height: 54px;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap;
-  scroll-snap-align: center;
-  //-ms-scroll-snap-align: center;
-  margin-right: 10px;
-
-  @media screen and (max-width: 769px) {
-    height: fit-content;
-    width: 158px;
-    padding: 5px 11px;
-    white-space: nowrap;
-    font-size: 16px;
-    line-height: 21px;
-  }
-}
 
 .button-container {
   display: flex;
@@ -54,8 +31,9 @@ const buttons = [
   scroll-snap-type: none;
   -ms-scroll-snap-type: none;
   scroll-padding: 0 10px;
+  grid-gap: 18px;
 
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 1100px) {
     margin-bottom: 64px;
     margin-top: 40px;
     overflow-x: scroll;
@@ -75,9 +53,9 @@ const buttons = [
   align-items: center;
   flex-direction: column;
   text-align: center;
-  max-width: 1476px;
-  margin: 242px auto 154px;
-  padding: 80px;
+  max-width: 1438px;
+  margin: 120px auto 154px;
+  padding: 43px 106px;
 
   @media screen and (max-width: 769px) {
     border-radius: 0;
@@ -95,15 +73,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 80px;
-
-  @media screen and (max-width: 769px) {
-    margin-bottom: 10px;
-  }
-}
-
-img {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 
   @media screen and (max-width: 769px) {
     margin-bottom: 10px;

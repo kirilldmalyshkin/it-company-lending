@@ -21,4 +21,12 @@ const router = createRouter({
     routes
 })
 
-createApp(App).use(router).mount('#app')
+const projectFeatures = {
+    locale: false,
+    news: false
+}
+
+createApp(App)
+    .use(router)
+    .provide('project-features', projectFeatures) // locale
+    .mount('#app')

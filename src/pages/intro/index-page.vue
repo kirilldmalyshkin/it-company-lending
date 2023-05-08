@@ -1,21 +1,28 @@
 <script setup>
-import IntroSection from "@/pages/intro/components/1.intro-section.vue";
-import CompanySection from "@/pages/intro/components/company-section.vue";
-import CasesSection from "@/pages/intro/components/cases-section.vue";
+import IntroSection from "./sections/intro-section.vue";
+import CompanySection from "./sections/company-section.vue";
+import CasesSection from "./sections/cases-section/cases-section.vue";
 import AppContact from "@/components/app-contact.vue";
-import PartnersSection from "@/pages/intro/components/partners-section.vue";
+import PartnersSection from "./sections/partners-section.vue";
+import StackTechnologies from "./sections/stack-technologies.vue";
+import AppNewsPreview from "@/components/news/app-news-preview.vue";
 </script>
 
 <template>
-  <main>
+  <main class="main-page">
     <intro-section />
     <company-section />
     <cases-section />
+    <stack-technologies />
     <app-contact />
     <partners-section />
+    <app-news-preview />
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.main-page {
+  background: $color-dark;
+}
 
 </style>

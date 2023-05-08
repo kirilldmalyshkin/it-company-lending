@@ -1,5 +1,24 @@
 @import "reset";
 @import "vars";
+@import "mixins";
+@import "helpers";
+
+html {
+  font-size: 16px;
+  @media screen and (max-width: 1460px) {
+    font-size: 12.8px;
+  }
+  @media screen and (max-width: 1460px) {
+    font-size: 10px;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
 
 body {
   background: $color-dark;
@@ -7,75 +26,40 @@ body {
   color: $color-white;
 }
 
-img {
-  pointer-events: none;
-}
-
 h1 {
   font-style: normal;
-  font-weight: 400;
-  font-size: 72px;
-  line-height: 95px;
-  text-align: center;
-  letter-spacing: -0.03em;
-
-  @media screen and (max-width: 769px) {
-    font-size: 32px;
-    line-height: 42px;
-    letter-spacing: -0.02em;
-  }
+  font-size: 3.625rem;
+  line-height: 132%;
+  @include letter-spacing
 }
 
 h2 {
   font-weight: 400;
-  font-size: 60px;
-  line-height: 79px;
-  letter-spacing: -0.03em;
-  @media screen and (max-width: 769px) {
-    font-size: 32px;
-    line-height: 42px;
-    letter-spacing: -0.02em;
-  }
+  font-size: 3rem;
+  line-height: 132%;
+  @include letter-spacing
 }
 
 p {
-  font-weight: 200;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.03em;
-  @media screen and (max-width: 769px) {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: -0.01em;
-  }
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 130%;
+  @include letter-spacing
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  @include button-defaults;
   box-sizing: content-box;
-  text-align: center;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 26px;
-  height: 40px;
-  padding: 0 15px;
-  width: 120px;
-  cursor: pointer;
+
+  padding: 10px 15px;
+  width: fit-content;
 
   position: relative;
-  @media screen and (max-width: 769px) {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-  }
+
   &::after, &::before {
-    display: block;
-    position: absolute;
+    @extend %psevdo-element-defaults;
     top: 0;
-    content: '';
     height: 100%;
     border: 2px solid $color-white;
     width: 15px;
@@ -92,6 +76,51 @@ p {
     border-left: none;
   }
 }
+
+.red-btn {
+  @include letter-spacing;
+  @include button-defaults;
+  @include flex-center;
+
+  background: $color-red-1;
+  padding: 10px 26px;
+  color: #000000;
+
+  &:hover {
+    background: $color-red-2;
+  }
+
+}
+
+.button-round {
+  @include flex-center;
+  @include button-defaults;
+  font-weight: 400;
+  font-size: 1.375rem;
+  padding: 8px 17px;
+  height: 54px;
+  scroll-snap-align: center;
+  min-width: 233px;
+
+  background: #DCD6FA;
+  border: 1px solid #C1B7F8;
+  border-radius: 45px;
+  color: #27272A;
+  &:hover {
+    background: transparent;
+    color: #FFF;
+  }
+
+  @media screen and (max-width: 769px) {
+    height: fit-content;
+    width: 158px;
+    padding: 5px 11px;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
 
 .text-center {
   text-align: center;
@@ -115,5 +144,3 @@ p {
     padding: 0 20px;
   }
 }
-
-

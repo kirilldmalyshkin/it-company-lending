@@ -1,0 +1,38 @@
+<svg width="1728" height="844" viewBox="0 0 1728 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_230_8692)">
+<rect width="1728" height="844" fill="none"/>
+<circle cx="296" cy="127" r="178.5" stroke="white"/>
+<rect x="280" y="110" width="33" height="33" fill="#F2C04B"/>
+<circle cx="296" cy="696" r="178.5" stroke="white"/>
+<rect x="280" y="679" width="33" height="33" fill="#A08EFF"/>
+<circle cx="1426" cy="127" r="178.5" stroke="white"/>
+<rect x="1410" y="110" width="33" height="33" fill="#C4DBFB"/>
+<circle cx="1426" cy="696" r="178.5" stroke="white"/>
+<rect x="1410" y="679" width="33" height="33" fill="#E77975"/>
+<circle cx="861" cy="127" r="19" fill="white"/>
+<path d="M335 127H818" stroke="white" stroke-dasharray="6 6"/>
+<path d="M904.5 127H1387.5" stroke="white" stroke-dasharray="6 6"/>
+<path d="M1426 417H1909" stroke="white" stroke-dasharray="6 6"/>
+<path d="M1 417H297" stroke="white" stroke-dasharray="6 6"/>
+<path d="M861 127L861 -5.66244e-07" stroke="white" stroke-dasharray="6 6"/>
+<path d="M861 824L861 697" stroke="white" stroke-dasharray="6 6"/>
+<path d="M424 842L316 734" stroke="white" stroke-dasharray="6 6"/>
+<path d="M421 -25L313 83" stroke="white" stroke-dasharray="6 6"/>
+<path d="M1279 -25L1387 83" stroke="white" stroke-dasharray="6 6"/>
+<path d="M172 -25L280 83" stroke="white" stroke-dasharray="6 6"/>
+<path d="M1569 -25L1461 83" stroke="white" stroke-dasharray="6 6"/>
+<path d="M1296 842L1404 734" stroke="white" stroke-dasharray="6 6"/>
+<circle cx="861" cy="696" r="19" fill="white"/>
+<path d="M335 696H818" stroke="white" stroke-dasharray="6 6"/>
+<path d="M904.5 696H1387.5" stroke="white" stroke-dasharray="6 6"/>
+<path d="M297 164V653.5" stroke="white"/>
+<path d="M297 734L297 861" stroke="white"/>
+<path d="M1426 167V656.5" stroke="white"/>
+<path d="M1426 734L1426 857" stroke="white"/>
+</g>
+<defs>
+<clipPath id="clip0_230_8692">
+<rect width="1728" height="844" fill="white"/>
+</clipPath>
+</defs>
+</svg>

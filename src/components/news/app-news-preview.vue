@@ -1,5 +1,5 @@
 <template>
-  <section class="news-preview container" v-if="false">
+  <section class="news-preview container" v-if="news">
     <h2 class="text-center">
       Инсайты
     </h2>
@@ -13,6 +13,9 @@
 
 <script setup>
 import AppNewsCard from "@/components/news/app-news-card.vue";
+import { inject } from "vue";
+
+const { news } = inject('project-features')
 
 const newsMock = {
   title: 'Как ChatGPT изменит наше сознание',

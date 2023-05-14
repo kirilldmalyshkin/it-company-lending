@@ -69,6 +69,8 @@ export default {
 }
 
 .contact {
+  background: $color-dark-4;
+  border: 1px solid #C1B7F8;
   max-width: 1436px;
   display: grid;
   width: 100%;

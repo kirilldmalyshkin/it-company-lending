@@ -13,12 +13,25 @@ const routes = [
         path: '/projects',
         name: 'projects',
         component: () => import('src/pages/projects/projects-page.vue')
+    },
+    {
+        path: '/services',
+        name: 'services',
+        component: () => import('src/pages/services/services-page.vue')
+    },
+    {
+        path: '/services/:service',
+        name: 'service',
+        component: () => import('src/pages/services/service-page.vue')
     }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior() {
+        document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+    }
 })
 
 const projectFeatures = {

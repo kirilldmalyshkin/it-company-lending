@@ -81,6 +81,7 @@
 
     &__logo {
       height: 43px;
+      width: 186px;
       padding-left: 25px;
 
       @media screen and (max-width: 769px){

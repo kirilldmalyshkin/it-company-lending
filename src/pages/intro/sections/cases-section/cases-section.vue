@@ -33,20 +33,11 @@ const cases = [
 <style scoped lang="scss">
   .cases {
     max-width: 1574px;
-    //box-sizing: border-box;
     position: relative;
-    //border: 1px solid transparent;
-    //background-image: linear-gradient(90deg, rgba(128,128,128,1) 0%, rgba(128,128,128,0) 100%);
-    //background-origin: border-box;
-    //background-clip: content-box, border-box;
     border-radius: 18px;
     overflow: hidden;
-    //background: linear-gradient(180deg, #27272A 0%, rgba(39, 39, 42, 0) 50%, #27272A 100%);
-    //background-clip: padding-box;
-    //box-shadow: 0 0 0 1px inset linear-gradient(180deg, #27272A 0%, rgba(39, 39, 42, 0) 50%, #27272A 100%);
     padding: 80px 49px 112px;
     margin: 0 auto;
-    //background-color: #28282A;
     @media screen and (max-width: 769px){
       padding: 100px 20px 80px;
     }
@@ -94,8 +85,8 @@ const cases = [
     }
     &__cards {
       display: grid;
-      grid-column-gap: 30px;
-      grid-row-gap: 27px;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
       grid-template-columns: repeat(3, 472px);
       justify-content: center;
       @media screen and (max-width: 769px) {

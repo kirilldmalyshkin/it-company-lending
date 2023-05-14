@@ -30,21 +30,34 @@ h1 {
   font-style: normal;
   font-size: 3.625rem;
   line-height: 132%;
-  @include letter-spacing
+  @include letter-spacing;
 }
 
 h2 {
   font-weight: 400;
   font-size: 3rem;
   line-height: 132%;
-  @include letter-spacing
+  @include letter-spacing;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.375rem;
+  @include letter-spacing;
 }
 
 p {
   font-weight: 300;
   font-size: 1.25rem;
   line-height: 130%;
-  @include letter-spacing
+  @include letter-spacing;
+}
+
+.p-small {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  letter-spacing: -0.03em;
 }
 
 .btn {
@@ -96,7 +109,7 @@ p {
   @include flex-center;
   @include button-defaults;
   font-weight: 400;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   padding: 8px 17px;
   height: 54px;
   scroll-snap-align: center;

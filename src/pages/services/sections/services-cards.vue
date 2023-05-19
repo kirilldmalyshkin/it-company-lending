@@ -8,7 +8,7 @@
         <services-preference-item v-bind="item" />
       </li>
     </ul>
-    <ul class="services-cards__menu">
+    <ul class="services-cards__menu" >
       <li v-for="service in services">
         <router-link
             :to="{ name: 'service', params: { service: service.url } }"

@@ -1,0 +1,61 @@
+// TODO add responsive classes lg/s/xs for screens
+
+$app-font-weights: (
+  300: 300
+);
+
+@each $state, $weight in $app-font-weights {
+  .fw-#{$state} {
+    font-weight: $weight !important;
+  }
+}
+
+$app-margins: (
+  212: 212px,
+  61: 61px,
+  40: 40px,
+  26: 26px,
+  7: 7px
+);
+
+@each $state, $margin in $app-margins {
+  .mb-#{$state} {
+    margin-bottom: $margin !important;
+  }
+
+  .mt-#{$state} {
+    margin-top: $margin !important;
+  }
+}
+
+$app-paddings: (
+  20: 20px
+);
+
+@each $state, $padding in $app-paddings {
+  .pl-#{$state} {
+    padding-left: $padding !important;
+  }
+}
+
+$app-min-width: (
+  180: 180px
+);
+
+@each $state, $min-width in $app-min-width {
+  .min-width-#{$state} {
+    min-width: $min-width !important;
+  }
+}
+
+$app-font-sizes: (
+ 14: 14px
+);
+
+@each $state, $size in app-font-sizes {
+  .f-size-#{$state} {
+    font-size: $size !important;
+  }
+}
+
+

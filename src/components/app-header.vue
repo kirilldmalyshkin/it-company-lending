@@ -12,8 +12,8 @@
         <span />
       </div>
       <ul class="nav__list" :class="{'open': burger}">
-        <li class="nav__list-item" v-for="link in links" :key="link.id">
-          <router-link :to="link.id" class="nav__link btn">{{ link.label }}</router-link>
+        <li class="nav__list-item" v-for="link in navItems" :key="link.id">
+          <router-link :to="link.path" class="nav__link btn">{{ link.title }}</router-link>
         </li>
         <li v-if="locale" class="nav__locale">
           EN
@@ -36,30 +36,43 @@
 <script setup>
 
   import { ref, inject } from "vue";
+  import { navItems } from '@/routes'
 
   const { locale } = inject('project-features')
 
-  const links = [
-    { label: 'О компании', id: '/' },
-    { label: 'Проекты', id: '/projects' },
-    { label: 'Услуги', id: '/services' },
-    { label: 'Инсайты', id: '/incites' },
-    { label: 'Вакансии', id: '/job' }
-  ]
-
   const burger = ref(false)
+
 
 </script>
 
 <style scoped lang="scss">
   .header {
     @include flex-center;
-
+    align-items: center;
     padding-top: 18px;
     padding-bottom: 19px;
     justify-content: space-between;
     position: relative;
     z-index: 100;
+
+    &__logo {
+      height: 43px;
+      width: 186px;
+      padding-left: 25px;
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 769px){
+        width: 106.78px;
+        height: 40px;
+
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
 
     &__wrapper {
       @include absolute-defaults;
@@ -71,24 +84,6 @@
 
       @media screen and (max-width: 769px) {
         background: $color-dark;
-      }
-    }
-
-    @media screen and (max-width: 1100px) {
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
-
-    &__logo {
-      height: 43px;
-      width: 186px;
-      padding-left: 25px;
-
-      @media screen and (max-width: 769px){
-        width: 106.78px;
-        height: 40px;
-        display: flex;
-        align-items: center;
       }
     }
 

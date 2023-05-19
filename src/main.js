@@ -2,29 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './assets/style/main.scss'
 import {createRouter, createWebHistory} from "vue-router";
+import { routes } from "@/routes.js";
 
-const routes = [
-    {
-        path: '/',
-        name: 'index',
-        component: () => import('@/pages/intro/index-page.vue')
-    },
-    {
-        path: '/projects',
-        name: 'projects',
-        component: () => import('src/pages/projects/projects-page.vue')
-    },
-    {
-        path: '/services',
-        name: 'services',
-        component: () => import('src/pages/services/services-page.vue')
-    },
-    {
-        path: '/services/:service',
-        name: 'service',
-        component: () => import('src/pages/services/service-page.vue')
-    }
-]
 
 const router = createRouter({
     history: createWebHistory(),
@@ -36,7 +15,7 @@ const router = createRouter({
 
 const projectFeatures = {
     locale: false,
-    news: false
+    news: true
 }
 
 createApp(App)

@@ -14,7 +14,7 @@
       <h2>
         Наша экспертиза
       </h2>
-      <div v-html="service.text" />
+      <div v-html="replaceLSEP(service.text)" />
     </section>
 
     <section class="service__clients clients container">
@@ -47,7 +47,7 @@
 import {onBeforeMount, ref, watch} from "vue";
 import { useRoute } from "vue-router";
 import { services } from "@/pages/services/services.js";
-import { replaceTags } from "@/helpers/filters.js";
+import {replaceLSEP, replaceTags } from "@/helpers/filters.js";
 import ServiceCard from "@/pages/services/components/service-card.vue";
 
 const route = useRoute()
@@ -128,6 +128,7 @@ const generateImagePath = (imageName) => ('/images/partners/' + imageName + '.sv
     grid-template-columns: repeat(3, 187.71px);
     grid-auto-rows: 25px;
     grid-row-gap: 50px;
+    align-items: center;
 
     img {
       object-fit: cover;

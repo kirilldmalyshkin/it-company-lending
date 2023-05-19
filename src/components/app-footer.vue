@@ -1,16 +1,13 @@
-<script setup>
-</script>
-
 <template>
   <footer class="footer">
     <div class="container">
     <div class="footer__logo">
       <img src="/images/geeklab-log.svg" alt="geeklab logo">
     </div>
-    <div class="footer__social">
-      <a href=""><img src="/images/Viber.svg" alt=""></a>
-      <a href=""><img src="/images/Telegram.svg" alt=""></a>
-    </div>
+    <!--    <div class="footer__social">-->
+    <!--      <a href=""><img src="/images/Viber.svg" alt=""></a>-->
+    <!--      <a href=""><img src="/images/Telegram.svg" alt=""></a>-->
+    <!--    </div>-->
       <div class="footer__address">
           Москва, Россия<br>
           Проспект Мира, 202, ст.3<br>
@@ -25,19 +22,13 @@
     <div class="footer__menu">
       <nav>
         <ul>
-          <li>
-            <a href="">О компании</a>
-          </li>
-          <li>
-            <a href="">Услуги</a>
-          </li>
-          <li>
-            <a href="">Кейсы</a>
+          <li v-for="link in navItems" >
+            <router-link :to="link.name"> {{ link.title }}</router-link>
           </li>
         </ul>
       </nav>
     </div>
-    <div class="footer__copyrights">
+    <div class="footer__copyrights f-size-14">
       <span>© 2023</span>
       <a href="">Политика конфиденциальности</a>
       <a href="">Политика файлов Cookie</a>
@@ -45,6 +36,10 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+import { navItems } from "@/routes.js";
+</script>
 
 <style scoped lang="scss">
 .footer {
@@ -55,7 +50,7 @@
     padding-bottom: 80px;
     display: grid;
     grid-column-gap: 200px;
-    grid-template-areas: 'logo address social' '. address2 menu ' 'copy copy copy';
+    grid-template-areas: 'logo address menu' '. address2 menu' 'copy copy copy';
     grid-template-columns: 261.6px 289px 132px;
     @media screen and (max-width: 1200px){
       grid-template-columns: 1fr;
@@ -65,7 +60,7 @@
     }
   }
   &__logo {
-    width: 261.6px;
+    width: 201px;
     grid-area: logo;
     @media screen and (max-width: 769px) {
       width: 106.78px;
@@ -111,7 +106,7 @@
 
   &__menu {
     grid-area: menu;
-    align-self: end;
+    align-self: start;
     @media screen and (max-width: 769px) {
       padding-top: 45px;
       padding-bottom: 25px;
@@ -119,7 +114,7 @@
     li {
       font-weight: 300;
       font-size: 22px;
-      line-height: 29px;
+      line-height: 200%;
       @media screen and (max-width: 769px){
         margin-bottom: 7px;
         font-size: 16px;
@@ -130,7 +125,7 @@
   &__copyrights {
     padding-top: 80px;
     font-weight: 200;
-    font-size: 18px;
+    //font-size: 18px;
     line-height: 24px;
     a, span {
       &::after {

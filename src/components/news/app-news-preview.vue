@@ -1,12 +1,15 @@
 <template>
-  <section class="news-preview container" v-if="news">
+  <section class="news-preview container" v-if="isNewsActive">
     <h2 class="text-center">
       Инсайты
     </h2>
     <div class="news-preview__cards">
-      <app-news-card v-bind="newsMock" />
-      <app-news-card />
-      <app-news-card />
+      <app-news-card v-for="newsItem in news" v-bind="newsItem" />
+    </div>
+    <div class="mt-61">
+      <button class="btn mx-auto min-width-180">
+        Смотреть больше
+      </button>
     </div>
   </section>
 </template>
@@ -15,7 +18,7 @@
 import AppNewsCard from "@/components/news/app-news-card.vue";
 import { inject } from "vue";
 
-const { news } = inject('project-features')
+const { news: isNewsActive } = inject('project-features')
 
 const newsMock = {
   title: 'Как ChatGPT изменит наше сознание',
@@ -25,6 +28,8 @@ const newsMock = {
   link: '',
   color: '#D9FF8E'
 }
+
+const news = [newsMock, newsMock, newsMock]
 </script>
 
 <style scoped lang="scss">
@@ -35,6 +40,12 @@ const newsMock = {
 
   h2 {
     margin-bottom: 59px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
 
 }

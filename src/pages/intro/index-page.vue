@@ -16,7 +16,7 @@ import AppNewsPreview from "@/components/news/app-news-preview.vue";
     <stack-technologies />
     <app-contact />
     <partners-section />
-    <app-news-preview />
+    <app-news-preview class="mt-212" />
   </main>
 </template>
 

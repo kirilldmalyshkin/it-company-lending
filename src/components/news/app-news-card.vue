@@ -6,8 +6,8 @@
         {{ date }}
       </div>
       <h5>{{ title }}</h5>
-      <p>
-        {{ preview }}
+      <p class="p-small">
+        {{ replaceLSEP(preview) }}
       </p>
       <a :href="link">
         читать
@@ -17,6 +17,8 @@
 </template>
 
 <script setup>
+  import {replaceLSEP} from "@/helpers/filters.js";
+
   defineProps({
     title: '',
     date: '',
@@ -34,8 +36,12 @@
   border-radius: 18px;
   overflow: hidden;
   background: $color-dark;
+  color: $color-white;
+  position: relative;
+
   &:hover {
     background: v-bind(color);
+    color: $color-dark;
   }
 
   img {
@@ -65,14 +71,17 @@
   }
 
   p {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 21px;
     flex-grow: 2;
   }
 
   a {
-    flex: 1 1 20px
+    position: absolute;
+    bottom: 29px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    flex: 1 1 20px;
+    text-decoration: underline;
   }
 }
 </style>
